@@ -1,0 +1,42 @@
+
+.addform{
+
+    width: 250px;
+    height: 70px;
+    background-color: rgb(180, 135, 222);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+
+}
+.addbox{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addinput{
+
+    width: 150px;
+    height: 30px;
+    background-color: rgb(176, 247, 250);
+    border-radius: 5px;
+}
+.click{
+
+    height: 35px;
+    background-color: rgb(219, 77, 77);
+    margin-left: 5px;
+    border-radius: 5px;
+    transition: all 2s linear;
+
+}
+.click:hover{
+
+    background-color: aliceblue;
+    color: black;
+    cursor: pointer;
+}
