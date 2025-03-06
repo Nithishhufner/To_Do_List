@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import HeaderComponent from "./ListItem/HeaderComponent";
 import FooterComponent from "./ListItem/FooterComponent";
@@ -6,25 +6,20 @@ import ToDoList from "./ListItem/ToDoList";
 import AddItem from "./ListItem/AddItem";
 
 export default function App() {
-  const [items, setitem] = useState([
-    {
-      id: 1,
-      checked: false,
-      item: "cricket",
-    },
+  const [items, setitem] = useState(()=>{
 
-    {
-      id: 2,
-      checked: false,
-      item: "football",
-    },
+   const savedItems = localStorage.getItem('todo')
 
-    {
-      id: 3,
-      checked: false,
-      item: "volleyball",
-    },
-  ]);
+   return savedItems ? JSON.parse(savedItems) : []
+
+  });
+
+  useEffect(()=>{
+
+    localStorage.setItem('todo',JSON.stringify(items))
+      
+
+  },[items])
   const [newitem, setnewitem] = useState("");
 
   const additem = (item) => {
